@@ -27,7 +27,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
+            className="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight"
           >
             Automate Your
             <br />
@@ -41,7 +41,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"
+            className="text-base md:text-lg text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
             Connect your favorite apps, set triggers and watch AI handle the rest — no coding required. 
             Get up and running in minutes.
@@ -75,7 +75,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="relative"
+            className="relative max-w-5xl mx-auto"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
             <motion.img

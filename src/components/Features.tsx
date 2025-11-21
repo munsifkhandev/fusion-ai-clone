@@ -32,22 +32,22 @@ const features = [
 
 export const Features = () => {
   return (
-    <section className="py-32 relative">
-      <div className="container mx-auto px-4">
+    <section className="py-24 relative">
+      <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
-          <p className="text-primary font-semibold mb-4">AI-Driven Features</p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-4">AI-Driven Features</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
             Build, scale and manage
             <br />
             entire AI workforce
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-gray-400 max-w-2xl mx-auto leading-relaxed">
             Fusion AI helps you tackle data bottlenecks, streamline analysis, 
             and make smarter decisions with ease.
           </p>
@@ -68,8 +68,8 @@ export const Features = () => {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <feature.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-muted-foreground mb-6">{feature.description}</p>
+                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-sm text-gray-400 mb-6 leading-relaxed">{feature.description}</p>
                 <img 
                   src={feature.image} 
                   alt={feature.title}

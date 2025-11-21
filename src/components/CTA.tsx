@@ -4,22 +4,22 @@ import { ChevronRight } from 'lucide-react';
 
 export const CTA = () => {
   return (
-    <section className="py-32 relative">
+    <section className="py-24 relative">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(217,91%,20%),transparent_70%)]" />
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center rounded-3xl border border-white/10 bg-card/30 backdrop-blur-xl p-16"
+          className="max-w-3xl mx-auto text-center rounded-3xl border border-white/10 bg-card/30 backdrop-blur-xl p-12"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
             Ready to Transform
             <br />
             Your Workflow?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-base text-gray-400 mb-8 leading-relaxed">
             Join thousands of teams already automating with AI
           </p>
 
