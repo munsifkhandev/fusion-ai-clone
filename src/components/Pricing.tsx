@@ -51,18 +51,19 @@ export const Pricing = () => {
   const [isYearly, setIsYearly] = useState(false);
 
   return (
-    <section className="py-32 relative" id="pricing">
-      <div className="container mx-auto px-4">
+    <section className="py-24 relative" id="pricing">
+      <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-4">Pricing</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
             Simple, Transparent Pricing
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-base text-gray-400 mb-8 leading-relaxed">
             Choose the perfect plan for your needs
           </p>
 
@@ -107,20 +108,20 @@ export const Pricing = () => {
                 </div>
               )}
 
-              <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-              <p className="text-muted-foreground mb-6">{plan.description}</p>
+              <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+              <p className="text-sm text-gray-400 mb-6 leading-relaxed">{plan.description}</p>
 
-              <div className="mb-8">
-                <span className="text-5xl font-bold">
+              <div className="mb-6">
+                <span className="text-4xl font-bold">
                   ${isYearly ? plan.price.yearly : plan.price.monthly}
                 </span>
-                <span className="text-muted-foreground">
+                <span className="text-sm text-gray-400">
                   /{isYearly ? 'year' : 'month'}
                 </span>
               </div>
 
               <Button
-                className={`w-full mb-8 ${
+                className={`w-full mb-6 ${
                   plan.highlighted
                     ? 'bg-primary hover:bg-primary/90 text-background'
                     : 'bg-secondary hover:bg-secondary/80'
@@ -129,11 +130,11 @@ export const Pricing = () => {
                 Get Started
               </Button>
 
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">{feature}</span>
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-400">{feature}</span>
                   </li>
                 ))}
               </ul>

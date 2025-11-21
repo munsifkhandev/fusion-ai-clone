@@ -24,18 +24,19 @@ const testimonials = [
 
 export const Testimonials = () => {
   return (
-    <section className="py-32 relative" id="testimonials">
-      <div className="container mx-auto px-4">
+    <section className="py-24 relative" id="testimonials">
+      <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-4">Testimonials</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
             Loved by Teams Worldwide
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base text-gray-400 leading-relaxed">
             See what our customers have to say
           </p>
         </motion.div>
@@ -56,7 +57,7 @@ export const Testimonials = () => {
                 ))}
               </div>
 
-              <p className="text-foreground mb-6">{testimonial.content}</p>
+              <p className="text-sm text-foreground mb-6 leading-relaxed">{testimonial.content}</p>
 
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-primary" />
