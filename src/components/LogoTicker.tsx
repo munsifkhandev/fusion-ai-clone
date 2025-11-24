@@ -16,11 +16,11 @@ export const LogoTicker = () => {
           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
           
-          <div className="flex gap-16">
-            {[...companies, ...companies].map((company, index) => (
+          <div className="flex gap-16 animate-scroll">
+            {[...companies, ...companies, ...companies].map((company, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 text-2xl font-bold text-muted-foreground/30 whitespace-nowrap cursor-pointer hover:text-muted-foreground/50 transition-colors duration-300"
+                className="flex-shrink-0 text-2xl font-bold text-muted-foreground/30 whitespace-nowrap"
               >
                 {company}
               </div>
