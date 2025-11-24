@@ -1,5 +1,3 @@
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
 import { Zap, Link2, CheckCircle } from 'lucide-react';
 
 const steps = [
@@ -24,33 +22,22 @@ const steps = [
 ];
 
 export const HowItWorks = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section className="py-24 relative" ref={ref}>
+    <section className="py-24 relative">
       <div className="container mx-auto px-6 max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-4">AI-Driven Features</p>
           <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
             Automate workflows in
             <br />
             three simple steps
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {steps.map((step, index) => (
-            <motion.div
+          {steps.map((step) => (
+            <div
               key={step.title}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
               className="relative p-8 rounded-3xl border border-border/50 bg-gradient-to-br from-card/50 to-card/30 backdrop-blur-sm hover:border-primary/50 transition-all duration-300"
             >
               {/* Gradient background effect */}
@@ -69,7 +56,7 @@ export const HowItWorks = () => {
                   {step.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,5 +1,3 @@
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
 import { Sparkles, Zap, Workflow, MessageSquare } from 'lucide-react';
 import featureWorkflow from '@/assets/feature-workflow.png';
 import featureChat from '@/assets/feature-chat.png';
@@ -31,39 +29,16 @@ const features = [
   },
 ];
 
-const FeatureCard = ({ feature, index }: { feature: typeof features[0], index: number }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
+const FeatureCard = ({ feature }: { feature: typeof features[0] }) => {
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ 
-        duration: 0.7, 
-        delay: index * 0.15,
-        ease: [0.22, 1, 0.36, 1]
-      }}
-      whileHover={{ 
-        y: -4,
-        transition: { duration: 0.3 }
-      }}
-      className="group relative rounded-2xl border border-white/10 bg-card/50 backdrop-blur-sm p-5 overflow-hidden hover:border-primary/50 transition-all duration-500 hover-lift"
-    >
-      {/* Animated gradient overlay on hover */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-      />
+    <div className="group relative rounded-2xl border border-white/10 bg-card/50 backdrop-blur-sm p-5 overflow-hidden hover:border-primary/50 transition-all duration-500 hover-lift">
+      {/* Gradient overlay on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
       <div className="relative z-10">
-        <motion.div 
-          whileHover={{ rotate: 360, scale: 1.1 }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center mb-4 shadow-lg"
-        >
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center mb-4 shadow-lg">
           <feature.icon className="w-5 h-5 text-primary" />
-        </motion.div>
+        </div>
         
         <h3 className="text-lg font-bold mb-2 group-hover:gradient-text transition-all duration-300">
           {feature.title}
@@ -73,44 +48,29 @@ const FeatureCard = ({ feature, index }: { feature: typeof features[0], index: n
           {feature.description}
         </p>
         
-        <motion.div
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.3 }}
-        >
+        <div>
           <img 
             src={feature.image} 
             alt={feature.title}
             className="rounded-lg border border-white/10 w-full opacity-80 group-hover:opacity-100 transition-all duration-500 shadow-md group-hover:shadow-xl"
           />
-        </motion.div>
+        </div>
       </div>
 
       {/* Corner accent */}
       <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-    </motion.div>
+    </div>
   );
 };
 
 export const Features = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section className="py-20 relative" ref={ref}>
+    <section className="py-20 relative">
       <div className="container mx-auto px-6 max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-12"
-        >
-          <motion.p 
-            className="text-sm uppercase tracking-widest text-primary font-semibold mb-4"
-            animate={{ opacity: [0.7, 1, 0.7] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
+        <div className="text-center mb-12">
+          <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-4">
             AI-Driven Features
-          </motion.p>
+          </p>
           <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
             Build, scale and manage
             <br />
@@ -120,11 +80,11 @@ export const Features = () => {
             Fusion AI helps you tackle data bottlenecks, streamline analysis, 
             and make smarter decisions with ease.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-6xl mx-auto">
-          {features.map((feature, index) => (
-            <FeatureCard key={feature.title} feature={feature} index={index} />
+          {features.map((feature) => (
+            <FeatureCard key={feature.title} feature={feature} />
           ))}
         </div>
       </div>
