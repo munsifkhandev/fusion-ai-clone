@@ -125,7 +125,6 @@ export const Hero = () => {
             transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="relative max-w-5xl mx-auto"
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
