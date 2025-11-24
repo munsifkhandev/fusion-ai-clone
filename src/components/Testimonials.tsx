@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 
 const testimonials = [
@@ -26,12 +25,7 @@ export const Testimonials = () => {
   return (
     <section className="py-24 relative" id="testimonials">
       <div className="container mx-auto px-6 max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-4">Testimonials</p>
           <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
             Loved by Teams Worldwide
@@ -39,16 +33,12 @@ export const Testimonials = () => {
           <p className="text-base text-gray-400 leading-relaxed">
             See what our customers have to say
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
+          {testimonials.map((testimonial) => (
+            <div
               key={testimonial.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
               className="rounded-3xl border border-white/10 bg-card/50 backdrop-blur-sm p-8"
             >
               <div className="flex gap-1 mb-6">
@@ -66,7 +56,7 @@ export const Testimonials = () => {
                   <div className="text-sm text-muted-foreground">{testimonial.role}</div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,5 +1,3 @@
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
 import {
   Accordion,
   AccordionContent,
@@ -23,18 +21,10 @@ const faqs = [
 ];
 
 export const FAQ = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section className="py-24 relative" ref={ref}>
+    <section className="py-24 relative">
       <div className="container mx-auto px-6 max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-4">FAQ</p>
           <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
             Frequently asked questions
@@ -42,14 +32,9 @@ export const FAQ = () => {
           <p className="text-base text-muted-foreground mb-4">
             Got any Questions?
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-3xl mx-auto"
-        >
+        <div className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
@@ -66,7 +51,7 @@ export const FAQ = () => {
               </AccordionItem>
             ))}
           </Accordion>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
