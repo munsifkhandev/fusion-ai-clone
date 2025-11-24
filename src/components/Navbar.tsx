@@ -41,6 +41,9 @@ export const Navbar = () => {
             <Link to="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Pricing
             </Link>
+            <Link to="/integration" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Integration
+            </Link>
             <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Blog
             </Link>
