@@ -2,8 +2,11 @@ import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { LogoTicker } from '@/components/LogoTicker';
 import { Features } from '@/components/Features';
+import { UseCases } from '@/components/UseCases';
 import { FeatureShowcase } from '@/components/FeatureShowcase';
-import { Pricing } from '@/components/Pricing';
+import { IntegrationsShowcase } from '@/components/IntegrationsShowcase';
+import { HowItWorks } from '@/components/HowItWorks';
+import { FAQ } from '@/components/FAQ';
 import { Testimonials } from '@/components/Testimonials';
 import { CTA } from '@/components/CTA';
 import { Footer } from '@/components/Footer';
@@ -20,35 +23,14 @@ const Index = () => {
 
       <Navbar />
       <Hero />
-      
-      {/* Premium section divider */}
-      <div className="relative py-8">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-border/20 to-transparent" />
-      </div>
-
       <LogoTicker />
-      
-      {/* Spacer with subtle gradient */}
-      <div className="h-24 bg-gradient-to-b from-transparent to-background/50" />
-      
       <Features />
-      
-      {/* Premium separator */}
-      <div className="relative py-12">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-        </div>
-      </div>
-      
+      <UseCases />
       <FeatureShowcase />
-      
-      {/* Pricing section with enhanced background */}
-      <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-        <Pricing />
-      </div>
-      
+      <IntegrationsShowcase />
+      <HowItWorks />
       <Testimonials />
+      <FAQ />
       <CTA />
       <Footer />
     </div>
