@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button';
 import { ChevronRight, Sparkles } from 'lucide-react';
-import heroDashboard from '@/assets/hero-dashboard.png';
 
 export const Hero = () => {
   return (
@@ -50,21 +49,6 @@ export const Hero = () => {
             >
               View Pricing
             </Button>
-          </div>
-
-          {/* Dashboard Image */}
-          <div className="relative max-w-5xl mx-auto">
-            <div>
-              <img
-                src={heroDashboard}
-                alt="AI Dashboard"
-                className="rounded-2xl border border-white/10 shadow-2xl w-full hover:shadow-[0_0_80px_rgba(251,146,60,0.3)] transition-all duration-500"
-              />
-            </div>
-            
-            {/* Floating elements */}
-            <div className="absolute -top-10 -left-10 w-20 h-20 bg-primary/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-accent/20 rounded-full blur-3xl" />
           </div>
         </div>
       </div>
