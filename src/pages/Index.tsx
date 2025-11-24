@@ -1,5 +1,6 @@
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
+import { LogoTicker } from '@/components/LogoTicker';
 import { Footer } from '@/components/Footer';
 
 const Index = () => {
@@ -14,6 +15,7 @@ const Index = () => {
 
       <Navbar />
       <Hero />
+      <LogoTicker />
       <Footer />
     </div>
   );
