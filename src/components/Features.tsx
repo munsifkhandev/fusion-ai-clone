@@ -46,10 +46,10 @@ const FeatureCard = ({ feature, index }: { feature: typeof features[0], index: n
         ease: [0.22, 1, 0.36, 1]
       }}
       whileHover={{ 
-        y: -8,
+        y: -4,
         transition: { duration: 0.3 }
       }}
-      className="group relative rounded-3xl border border-white/10 bg-card/50 backdrop-blur-sm p-8 overflow-hidden hover:border-primary/50 transition-all duration-500 hover-lift"
+      className="group relative rounded-2xl border border-white/10 bg-card/50 backdrop-blur-sm p-5 overflow-hidden hover:border-primary/50 transition-all duration-500 hover-lift"
     >
       {/* Animated gradient overlay on hover */}
       <motion.div
@@ -60,33 +60,33 @@ const FeatureCard = ({ feature, index }: { feature: typeof features[0], index: n
         <motion.div 
           whileHover={{ rotate: 360, scale: 1.1 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="w-12 h-12 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center mb-6 shadow-lg"
+          className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center mb-4 shadow-lg"
         >
-          <feature.icon className="w-6 h-6 text-primary" />
+          <feature.icon className="w-5 h-5 text-primary" />
         </motion.div>
         
-        <h3 className="text-xl font-bold mb-3 group-hover:gradient-text transition-all duration-300">
+        <h3 className="text-lg font-bold mb-2 group-hover:gradient-text transition-all duration-300">
           {feature.title}
         </h3>
         
-        <p className="text-sm text-gray-400 mb-6 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+        <p className="text-xs text-gray-400 mb-4 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
           {feature.description}
         </p>
         
         <motion.div
-          whileHover={{ scale: 1.03 }}
+          whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
         >
           <img 
             src={feature.image} 
             alt={feature.title}
-            className="rounded-xl border border-white/10 w-full opacity-80 group-hover:opacity-100 transition-all duration-500 shadow-lg group-hover:shadow-2xl"
+            className="rounded-lg border border-white/10 w-full opacity-80 group-hover:opacity-100 transition-all duration-500 shadow-md group-hover:shadow-xl"
           />
         </motion.div>
       </div>
 
       {/* Corner accent */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </motion.div>
   );
 };
@@ -96,13 +96,13 @@ export const Features = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 relative" ref={ref}>
+    <section className="py-20 relative" ref={ref}>
       <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <motion.p 
             className="text-sm uppercase tracking-widest text-primary font-semibold mb-4"
@@ -122,7 +122,7 @@ export const Features = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <FeatureCard key={feature.title} feature={feature} index={index} />
           ))}
