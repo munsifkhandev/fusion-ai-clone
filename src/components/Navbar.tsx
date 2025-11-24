@@ -36,7 +36,7 @@ export const Navbar = () => {
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-8">
             <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              About
+              About us
             </Link>
             <Link to="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Pricing
@@ -46,6 +46,9 @@ export const Navbar = () => {
             </Link>
             <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Contact
+            </Link>
+            <Link to="/waitlist" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Waitlist
             </Link>
           </div>
 
