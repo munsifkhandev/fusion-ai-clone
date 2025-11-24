@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,30 +26,27 @@ export const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-primary flex items-center justify-center">
               <Sparkles className="w-5 h-5 text-background" />
             </div>
             <span className="text-xl font-bold">Fusion AI</span>
-          </div>
+          </Link>
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              About us
-            </a>
-            <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              About
+            </Link>
+            <Link to="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Pricing
-            </a>
-            <a href="#integration" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Integration
-            </a>
-            <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            </Link>
+            <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Blog
-            </a>
-            <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            </Link>
+            <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Contact
-            </a>
+            </Link>
           </div>
 
           {/* CTA Button */}
