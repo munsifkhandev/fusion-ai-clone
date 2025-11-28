@@ -1,10 +1,14 @@
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { LogoTicker } from '@/components/LogoTicker';
+import { Stats } from '@/components/Stats';
 import { FeaturesShowcase } from '@/components/FeaturesShowcase';
 import { Features } from '@/components/Features';
+import { IntegrationsShowcase } from '@/components/IntegrationsShowcase';
 import { HowItWorks } from '@/components/HowItWorks';
+import { TrustBadges } from '@/components/TrustBadges';
 import { Testimonials } from '@/components/Testimonials';
+import { CompanyLogos } from '@/components/CompanyLogos';
 import { FAQ } from '@/components/FAQ';
 import { CTA } from '@/components/CTA';
 import { Footer } from '@/components/Footer';
@@ -22,10 +26,14 @@ const Index = () => {
       <Navbar />
       <Hero />
       <LogoTicker />
+      <Stats />
       <FeaturesShowcase />
       <Features />
+      <IntegrationsShowcase />
       <HowItWorks />
+      <TrustBadges />
       <Testimonials />
+      <CompanyLogos />
       <FAQ />
       <CTA />
       <Footer />
