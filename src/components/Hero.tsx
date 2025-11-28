@@ -1,5 +1,7 @@
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Sparkles } from 'lucide-react';
+import { ChevronRight, Sparkles, Play } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import heroDashboard from '@/assets/hero-dashboard.png';
 
 export const Hero = () => {
   return (
@@ -17,7 +19,7 @@ export const Hero = () => {
           </div>
 
           {/* Heading */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight">
             Automate Your
             <br />
             <span className="gradient-text inline-block">
@@ -28,27 +30,55 @@ export const Hero = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base md:text-lg text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
             Connect your favorite apps, set triggers and watch AI handle the rest — no coding required. 
             Get up and running in minutes.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-background font-semibold text-lg px-8 group hover-glow shadow-lg"
-            >
-              Get Started - Free
-              <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-white/20 hover:bg-white/5 text-lg px-8 hover:border-primary/50 transition-all duration-300"
-            >
-              View Pricing
-            </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Link to="/waitlist">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90 text-background font-semibold text-lg px-8 group hover-glow shadow-lg"
+              >
+                Get Started - Free
+                <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+              </Button>
+            </Link>
+            <Link to="/pricing">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white/20 hover:bg-white/5 text-lg px-8 hover:border-primary/50 transition-all duration-300"
+              >
+                View Pricing
+              </Button>
+            </Link>
+          </div>
+          
+          {/* Watch Demo Link */}
+          <div className="flex items-center justify-center gap-2 mb-16">
+            <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
+              <Play className="w-4 h-4 text-primary fill-primary" />
+            </div>
+            <span className="text-muted-foreground text-sm cursor-pointer hover:text-foreground transition-colors">
+              Watch 2-min demo
+            </span>
+          </div>
+          
+          {/* Dashboard Preview */}
+          <div className="relative max-w-4xl mx-auto">
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 pointer-events-none" />
+            <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-2xl shadow-primary/10">
+              <img 
+                src={heroDashboard} 
+                alt="Fusion AI Dashboard" 
+                className="w-full h-auto"
+              />
+              {/* Glow effect behind image */}
+              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/20 to-accent/20 blur-3xl" />
+            </div>
           </div>
         </div>
       </div>

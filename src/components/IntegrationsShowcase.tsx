@@ -1,73 +1,102 @@
+import { motion } from 'framer-motion';
 import { 
-  Slack as SlackIcon, 
-  MessageSquare, 
-  Mail,
-  Calendar,
-  Database,
-  FileText,
-  Zap,
-  Users
+  MessageSquare, Mail, Calendar, Database, 
+  Cloud, FileText, Zap, Bot,
+  Github, Trello, Chrome, Users
 } from 'lucide-react';
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 
-const apps = [
-  { icon: SlackIcon, name: 'Slack' },
-  { icon: MessageSquare, name: 'Teams' },
-  { icon: Mail, name: 'Gmail' },
-  { icon: Calendar, name: 'Calendar' },
-  { icon: Database, name: 'HubSpot' },
-  { icon: FileText, name: 'Notion' },
-  { icon: Zap, name: 'Zapier' },
-  { icon: Users, name: 'Salesforce' },
+const integrations = [
+  { icon: Users, name: 'Slack', category: 'Communication' },
+  { icon: Github, name: 'GitHub', category: 'Development' },
+  { icon: Mail, name: 'Gmail', category: 'Email' },
+  { icon: Calendar, name: 'Calendar', category: 'Scheduling' },
+  { icon: Database, name: 'Airtable', category: 'Database' },
+  { icon: Cloud, name: 'Dropbox', category: 'Storage' },
+  { icon: Trello, name: 'Trello', category: 'Project' },
+  { icon: MessageSquare, name: 'Discord', category: 'Communication' },
+  { icon: FileText, name: 'Notion', category: 'Docs' },
+  { icon: Chrome, name: 'Chrome', category: 'Browser' },
+  { icon: Zap, name: 'Zapier', category: 'Automation' },
+  { icon: Bot, name: 'OpenAI', category: 'AI' },
 ];
 
 export const IntegrationsShowcase = () => {
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Decorative gradient orb */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-[120px] opacity-30" />
-
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent" />
+      
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        <div className="text-center mb-16">
-          <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-4">Powerful Integrations</p>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
-            Seamlessly <span className="gradient-text">Integrate</span>
-            <br />
-            Every App
-          </h2>
-        </div>
-
-        {/* Circular app icons layout */}
-        <div className="relative w-full max-w-3xl mx-auto h-[400px] mb-12">
-          {apps.map((app, index) => {
-            const angle = (index / apps.length) * 2 * Math.PI;
-            const radius = 180;
-            const x = Math.cos(angle) * radius;
-            const y = Math.sin(angle) * radius;
-
-            return (
-              <div
-                key={app.name}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                style={{
-                  transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-                }}
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left content */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-4">
+              Seamless Integrations
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
+              Connect with
+              <br />
+              <span className="gradient-text">500+ apps</span>
+            </h2>
+            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+              Fusion AI integrates with all your favorite tools. From CRMs to communication 
+              platforms, databases to AI services — connect everything in one place.
+            </p>
+            
+            <div className="flex flex-wrap gap-3 mb-8">
+              {['No-code setup', 'Real-time sync', 'Custom webhooks', 'API access'].map((feature) => (
+                <span 
+                  key={feature}
+                  className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20"
+                >
+                  {feature}
+                </span>
+              ))}
+            </div>
+            
+            <Button 
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-background font-semibold hover-glow"
+            >
+              Explore Integrations
+            </Button>
+          </motion.div>
+          
+          {/* Right - Integration grid */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-4 gap-4"
+          >
+            {integrations.map((integration, index) => (
+              <motion.div
+                key={integration.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                className="group relative p-4 rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm hover:border-primary/50 hover:bg-card/80 transition-all duration-300 flex flex-col items-center justify-center aspect-square cursor-pointer"
               >
-                <div className="w-16 h-16 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 flex items-center justify-center hover:border-primary/50 transition-all duration-300 shadow-lg">
-                  <app.icon className="w-8 h-8 text-primary" />
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+                  <integration.icon className="w-5 h-5 text-primary" />
                 </div>
-              </div>
-            );
-          })}
-
-          {/* Center glow effect */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
-        </div>
-
-        <div className="text-center">
-          <Button size="lg" variant="outline" className="rounded-full">
-            Explore All
-          </Button>
+                <span className="text-xs font-medium text-center">{integration.name}</span>
+                
+                {/* Hover tooltip */}
+                <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-card border border-border rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                  {integration.category}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
